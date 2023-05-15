@@ -1,0 +1,4 @@
+# thienan-api
+
+Serves facts about thienan. Routes that change the list of facts (post, patch, delete) only work if
+you have the client id and client secret. So basically only I can do that. But you can view the facts
