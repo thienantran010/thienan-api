@@ -4,9 +4,6 @@ require('dotenv').config();
 const { auth } = require('express-oauth2-jwt-bearer');
 const router = express.Router();
 
-const AUTH0_DOMAIN = "dev-mhl2tc100hwj2hyo.auth0.com";
-const API_IDENTIFIER = "https://thienan-api";
-
 //Get all Method
 router.get('/getAll', factController.getAll);
 
