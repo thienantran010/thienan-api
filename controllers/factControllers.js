@@ -40,11 +40,11 @@ exports.getOneById = async (req, res) => {
 // Get random fact
 exports.getOneRandom = async (req, res) => {
     try {
-        fact = Fact.aggregate([{ $sample: { size: 1 } }]);
+        const fact = await Fact.aggregate([{ $sample: { size: 1 } }]);
         res.json(fact);
     }
     catch (error) {
-        res.status(500).json({message: error.message});
+        res.status(400).json({message: error.message});
     }
 };
 
