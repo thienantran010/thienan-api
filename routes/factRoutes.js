@@ -1,17 +1,18 @@
 const express = require('express');
+const cors = require('cors');
 const factController = require("../controllers/factControllers");
 require('dotenv').config();
 const { auth } = require('express-oauth2-jwt-bearer');
 const router = express.Router();
 
 //Get all Method
-router.get('/getAll', factController.getAll);
+router.get('/getAll', cors(), factController.getAll);
 
 //Get by ID Method
-router.get('/getOneById/:id', factController.getOneById);
+router.get('/getOneById/:id', cors(), factController.getOneById);
 
 //Get random fact
-router.get('/getOneRandom', factController.getOneRandom);
+router.get('/getOneRandom', cors(), factController.getOneRandom);
 
 const jwtCheck = auth({
     audience: process.env.AUDIENCE,
